@@ -175,7 +175,7 @@
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\WS_AccountController.cs" />
-    <Compile Include="Controllers\WS_TodoController.cs" />
+    <Compile Include="Controllers\WS_BlogController.cs" />
     <Compile Include="Domain\BlogItem.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Global.asax.cs">
@@ -206,7 +206,7 @@
     <Content Include="Assets\app\controllers\homeCtrl.js" />
     <Content Include="Assets\app\controllers\registerCtrl.js" />
     <Content Include="Assets\app\controllers\signInCtrl.js" />
-    <Content Include="Assets\app\controllers\todoManagerCtrl.js" />
+    <Content Include="Assets\app\controllers\blogManagerCtrl.js" />
     <Content Include="Assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Assets\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Assets\bootstrap\css\bootstrap.css" />
@@ -256,7 +256,7 @@
     <Content Include="Views\App\Home.cshtml" />
     <Content Include="Views\App\Register.cshtml" />
     <Content Include="Views\App\SignIn.cshtml" />
-    <Content Include="Views\App\TodoManager.cshtml" />
+    <Content Include="Views\App\BlogManager.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201508290214222_InitDB.resx">

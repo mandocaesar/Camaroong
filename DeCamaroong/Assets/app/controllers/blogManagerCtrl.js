@@ -1,9 +1,9 @@
-﻿angular.module('todoManager', [])
-    .controller('todoManagerCtrl',['$scope','$http', function ($scope, $http) {
+﻿angular.module('blogManager', [])
+    .controller('blogManagerCtrl',['$scope','$http', function ($scope, $http) {
 
         $scope.getList = function ()
         {
-            $http.get('/api/WS_Todo/GetUserTodoItems')
+            $http.get('/api/WS_Blog/GetUserBlogItems')
                 .success(function (data, status, headers, config) {
                     $scope.todoList = data;
                 });
@@ -17,7 +17,7 @@
                 };
 
             if ($scope.newTaskText != '') {
-                $http.post('/api/WS_Todo/PostTodoItem', item)
+                $http.post('/api/WS_Blog/PostBlogItem', item)
                     .success(function (data, status, headers, config) {
                         $scope.newTaskText = '';
                         $scope.getList();
@@ -27,7 +27,7 @@
 
         $scope.complete = function(index)
         {
-            $http.post('/api/WS_Todo/CompleteTodoItem/' + $scope.todoList[index].id)
+            $http.post('/api/WS_Blog/CompleteBlogItem/' + $scope.todoList[index].id)
                 .success(function (data, status, headers, config) {
                     $scope.getList();
                 });
@@ -35,7 +35,7 @@
 
         $scope.delete = function(index)
         {
-            $http.post('/api/WS_Todo/DeleteTodoItem/' + $scope.todoList[index].id)
+            $http.post('/api/WS_Blog/DeleteBlogItem/' + $scope.todoList[index].id)
                 .success(function (data, status, headers, config) {
                     $scope.getList();
                 });

@@ -26,7 +26,7 @@ namespace DeCamaroong.Controllers
 
 
         [Authorize]
-        public ActionResult TodoManager()
+        public ActionResult BlogManager()
         {
             return PartialView();
         }

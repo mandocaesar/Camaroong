@@ -14,7 +14,7 @@ using DeCamaroong.Domain;
 namespace DeCamaroong.Controllers
 {
 
-    public class WS_TodoController : ApiController
+    public class WS_BlogController : ApiController
     {
         private DBContext db = new DBContext();
         //HttpContext httpContext = new HttpContext(new Http
@@ -36,7 +36,7 @@ namespace DeCamaroong.Controllers
 
         [HttpGet]
         [Authorize]
-        public List<BlogItem> GetUserTodoItems()
+        public List<BlogItem> GetUserBlogItems()
         {
             string userId = Request.GetOwinContext().Authentication.User.Identity.GetUserId();
 
@@ -47,7 +47,7 @@ namespace DeCamaroong.Controllers
 
         [HttpPost]
         [Authorize]
-        public HttpResponseMessage PostTodoItem(BlogItemViewModel item)
+        public HttpResponseMessage PostBlogItem(BlogItemViewModel item)
         {
             var modelStateErrors = ModelState.Values.ToList();
 
@@ -88,7 +88,7 @@ namespace DeCamaroong.Controllers
 
         [HttpPost]
         [Authorize]
-        async public Task<HttpResponseMessage> CompleteTodoItem(int id)
+        async public Task<HttpResponseMessage> CompletePostItem(int id)
         {
             var item = db.BlogItems.Where(t => t.ID == id).FirstOrDefault();
             if (item != null)
@@ -101,7 +101,7 @@ namespace DeCamaroong.Controllers
 
         [HttpPost]
         [Authorize]
-        async public Task<HttpResponseMessage> DeleteTodoItem(int id)
+        async public Task<HttpResponseMessage> DeleteBlogItem(int id)
         {
             var item = db.BlogItems.Where(t => t.ID == id).FirstOrDefault();
             if (item != null)
