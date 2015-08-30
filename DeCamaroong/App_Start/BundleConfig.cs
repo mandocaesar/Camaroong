@@ -19,7 +19,11 @@ namespace DeCamaroong
             bundles.Add(new ScriptBundle("~/ng").Include(
                         "~/Assets/ng/angular.min.js",
                         "~/Assets/ng/angular-route.min.js",
-                        "~/Assets/ng/angular-cookies.min.js"));
+                        "~/Assets/ng/angular-cookies.min.js",
+                        "~/Assets/ng/textAngular-rangy.min.js",
+                        "~/Assets/ng/textAngular-sanitize.min.js",
+                        "~/Assets/ng/textAngular.min.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/app").IncludeDirectory("~/Assets/app", "*.js", true));
 
@@ -27,10 +31,27 @@ namespace DeCamaroong
                         "~/Assets/jquery/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/misc").IncludeDirectory("~/Assets/misc", "*.js", true));
+   
+            bundles.Add(new ScriptBundle("~/custom").Include(
+                "~/Assets/custom/hover-dropdown-menu.js",
+                "~/Assets/custom/jquery.hover-dropdown-menu-addon.js",
+                "~/Assets/custom/jquery.easing.1.3.js",
+                "~/Assets/custom/jquery.sticky.js",
+                "~/Assets/custom/bootstrapValidator.min.js",
+                "~/Assets/rs-plugin/jquery.themepunch.tools.min.js",
+                "~/Assets/rs-plugin/jquery.themepunch.revolution.min.js",
+                "~/Assets/custom/revolution-custom.js",
+                "~/Assets/custom/jquery.mixitup.min.js",
+                "~/Assets/custom/jquery.appear.js",
+                "~/Assets/custom/effect.js",
+                "~/Assets/custom/owl.carousel.min.js",
+                "~/Assets/custom/jquery.prettyPhoto.js",
+                "~/Assets/custom/jquery.parallax-1.1.3.js",
+                "~/Assets/custom/jquery.countTo.js",
+                "~/Assets/custom/jquery.mb.YTPlayer.js",
+                "~/Assets/custom/custom.js"));
 
-            // Set EnableOptimizations to false for debugging. For more information,
-            // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

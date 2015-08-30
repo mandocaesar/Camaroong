@@ -171,12 +171,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AppController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\WS_AccountController.cs" />
     <Compile Include="Controllers\WS_BlogController.cs" />
     <Compile Include="Domain\BlogItem.cs" />
+    <Compile Include="Domain\Mail.cs" />
+    <Compile Include="Domain\PropertyBuilding.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -189,11 +194,15 @@
     <Compile Include="Migrations\201508290243517_29092015.Designer.cs">
       <DependentUpon>201508290243517_29092015.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508300451476_20150830.cs" />
+    <Compile Include="Migrations\201508300451476_20150830.Designer.cs">
+      <DependentUpon>201508300451476_20150830.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataModels.cs" />
-    <Compile Include="Models\TodoItemViewModel.cs" />
+    <Compile Include="Models\BlogItemViewModel.cs" />
     <Compile Include="Controllers\Utility\ModelErrorChecker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -214,14 +223,73 @@
     <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Assets\bootstrap\js\bootstrap.js" />
     <Content Include="Assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\img\sections\bg\bg-1.jpg" />
+    <Content Include="Assets\img\sections\bg\bg-11.jpg" />
+    <Content Include="Assets\img\sections\map-marker.png" />
+    <Content Include="Assets\img\sections\patterns\pattern.png" />
+    <Content Include="Assets\img\sections\additional-img2.jpg" />
+    <Content Include="Assets\img\sections\estate-1.jpg" />
+    <Content Include="Assets\img\sections\estate-2.jpg" />
+    <Content Include="Assets\img\sections\estate-3.jpg" />
+    <Content Include="Assets\img\sections\property-1.jpg" />
+    <Content Include="Assets\img\sections\property-2.jpg" />
+    <Content Include="Assets\img\sections\property-3.jpg" />
+    <Content Include="Assets\img\sections\property-4.jpg" />
+    <Content Include="Assets\img\sections\slider\slider29-bg.jpg" />
+    <Content Include="Assets\img\sections\slider\slider30-bg.jpg" />
+    <Content Include="Assets\img\sections\slider\slider31-bg.jpg" />
     <Content Include="Assets\jquery\jquery.min.js" />
+    <Content Include="Assets\custom\bootstrap.min.js" />
+    <Content Include="Assets\custom\bootstrapValidator.min.js" />
+    <Content Include="Assets\custom\custom.js" />
+    <Content Include="Assets\custom\effect.js" />
+    <Content Include="Assets\custom\hover-dropdown-menu.js" />
+    <Content Include="Assets\custom\jquery.appear.js" />
+    <Content Include="Assets\custom\jquery.countTo.js" />
+    <Content Include="Assets\custom\jquery.easing.1.3.js" />
+    <Content Include="Assets\custom\jquery.easypiechart.min.js" />
+    <Content Include="Assets\custom\jquery.hover-dropdown-menu-addon.js" />
+    <Content Include="Assets\custom\jquery.mb.YTPlayer.js" />
+    <Content Include="Assets\custom\jquery.mixitup.min.js" />
+    <Content Include="Assets\custom\jquery.parallax-1.1.3.js" />
+    <Content Include="Assets\custom\jquery.prettyPhoto.js" />
+    <Content Include="Assets\custom\jquery.sticky.js" />
+    <Content Include="Assets\rs-plugin\jquery.themepunch.revolution.min.js" />
+    <Content Include="Assets\rs-plugin\jquery.themepunch.tools.min.js" />
     <Content Include="Assets\misc\modernizr.min.js" />
+    <Content Include="Assets\custom\owl.carousel.min.js" />
     <Content Include="Assets\misc\respond.min.js" />
+    <Content Include="Assets\custom\revolution-custom.js" />
+    <Content Include="Assets\custom\carousel.js" />
+    <Content Include="Assets\custom\scripts.js" />
+    <Content Include="Assets\custom\tweetie.min.js" />
     <Content Include="Assets\ng\angular-cookies.min.js" />
     <Content Include="Assets\ng\angular-resource.min.js" />
     <Content Include="Assets\ng\angular-route.min.js" />
     <Content Include="Assets\ng\angular.min.js" />
+    <Content Include="Assets\ng\textAngular-rangy.min.js" />
+    <Content Include="Assets\ng\textAngular-sanitize.js" />
+    <Content Include="Assets\ng\textAngular-sanitize.min.js" />
+    <Content Include="Assets\ng\textAngular.js" />
+    <Content Include="Assets\ng\textAngular.min.js" />
+    <Content Include="Assets\styles\animate.min.css" />
+    <Content Include="Assets\styles\bootstrap.min.css" />
+    <Content Include="Assets\styles\color.css" />
+    <Content Include="Assets\styles\font-awesome.css" />
+    <Content Include="Assets\styles\font-awesome.min.css" />
+    <Content Include="Assets\styles\hover-dropdown-menu.css" />
+    <Content Include="Assets\styles\icons.css" />
+    <Content Include="Assets\styles\owl\owl.carousel.css" />
+    <Content Include="Assets\styles\owl\owl.theme.css" />
+    <Content Include="Assets\styles\owl\owl.transitions.css" />
+    <Content Include="Assets\styles\prettyPhoto.css" />
+    <Content Include="Assets\styles\responsive.css" />
+    <Content Include="Assets\styles\revolution-slider.css" />
+    <Content Include="Assets\styles\settings.css" />
+    <Content Include="Assets\styles\style.css" />
     <Content Include="Assets\styles\styles.css" />
+    <Content Include="Assets\styles\textAngular.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -240,6 +308,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -265,6 +335,28 @@
     <EmbeddedResource Include="Migrations\201508290243517_29092015.resx">
       <DependentUpon>201508290243517_29092015.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508300451476_20150830.resx">
+      <DependentUpon>201508300451476_20150830.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\AdminApp\BlogManager.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\AdminApp\SignIn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Admin\AdminHome.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,6 +1,7 @@
 ﻿angular.module('signIn', ['ngCookies'])
     .controller('signInCtrl', ['$scope' ,'$rootScope', '$http', '$cookies', '$cookieStore', '$location', '$routeParams', function ($scope, $rootScope, $http, $cookies, $cookieStore, $location, $routeParams) {
         $scope.message = $routeParams.message;
+        $scope.isHome = false;
         $scope.signIn = function () {
             $scope.showMessage = false;
             var params = "grant_type=password&username=" + $scope.username + "&password=" + $scope.password;

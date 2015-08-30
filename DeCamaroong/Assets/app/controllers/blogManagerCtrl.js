@@ -1,5 +1,8 @@
-﻿angular.module('blogManager', [])
-    .controller('blogManagerCtrl',['$scope','$http', function ($scope, $http) {
+﻿angular.module('blogManager', ['textAngular'])
+    .controller('blogManagerCtrl', ['$scope', '$http', function ($scope, $http) {
+        $scope.isHome = false;
+        $scope.blogTitle = "";
+        $scope.blogContent = "";
 
         $scope.getList = function ()
         {
@@ -13,7 +16,8 @@
         {
             item =
                 {
-                    task : $scope.newTaskText
+                    Title: $scope.blogTitle,
+                    Content : $scope.blogContent
                 };
 
             if ($scope.newTaskText != '') {

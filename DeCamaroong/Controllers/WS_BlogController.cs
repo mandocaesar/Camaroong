@@ -38,11 +38,13 @@ namespace DeCamaroong.Controllers
         [Authorize]
         public List<BlogItem> GetUserBlogItems()
         {
-            string userId = Request.GetOwinContext().Authentication.User.Identity.GetUserId();
+            //string userId = Request.GetOwinContext().Authentication.User.Identity.GetUserId();
 
-            var currentUser = UserManager.FindById(userId);
+            //var currentUser = UserManager.FindById(userId);
 
-            return currentUser.BlogItems;
+            //return currentUser.BlogItems;
+            return db.BlogItems.ToList();
+            
         }
 
         [HttpPost]
@@ -67,7 +69,9 @@ namespace DeCamaroong.Controllers
                     var currentUser = UserManager.FindById(userId);
                     currentUser.BlogItems.Add(new BlogItem()
                     {
-                       
+                       Content = item.Content,
+                       Title = item.Title,
+                       date = DateTime.Now
                     });
 
                     UserManager.Update(currentUser);
