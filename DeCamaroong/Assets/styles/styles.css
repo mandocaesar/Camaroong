@@ -121,3 +121,18 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+ .trim-info {
+      max-width: 100px;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: clip;
+      white-space: nowrap;  
+      line-height: 15px;
+      position: relative;
+   }
+.bordered {
+    outline:medium;
+outline-color:green;
+margin:10px;
+}

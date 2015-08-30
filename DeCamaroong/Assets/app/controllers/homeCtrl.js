@@ -4,6 +4,15 @@
             alert("WOW");
         }
         
-        $scope.isHome = true;
+        $scope.getList = function () {
+            $http.get('/api/WS_Blog/GetUserBlogItems')
+                .success(function (data, status, headers, config) {
+                    console.log(data);
+                    $scope.blogList = data;
+                });
+        }
+
+        $scope.getList();
+
        
     }]);

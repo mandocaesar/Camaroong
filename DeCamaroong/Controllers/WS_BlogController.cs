@@ -35,10 +35,15 @@ namespace DeCamaroong.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public List<BlogItem> GetUserBlogItems()
         {
             return db.BlogItems.ToList();
+        }
+
+        [HttpPost]
+        public BlogItem GetUserBlogItem(int ID)
+        {
+            return db.BlogItems.Where(e=>e.ID == ID).FirstOrDefault();
         }
 
         [HttpPost]
@@ -85,15 +90,23 @@ namespace DeCamaroong.Controllers
 
         [HttpPost]
         [Authorize]
-        async public Task<HttpResponseMessage> UpdatePostItem(BlogItem item)
+        public HttpResponseMessage UpdatePostItem(BlogItem item)
         {
-            var it = db.BlogItems.Where(t => t.ID == item.ID).FirstOrDefault();
-            if (it != null)
+            try
             {
-                await db.SaveChangesAsync();
-            }
+                var it = db.BlogItems.Where(t => t.ID == item.ID).FirstOrDefault();
+                if (it != null)
+                {
+                    it.Content = item.Content;
+                    it.Title = item.Title;
+                    db.SaveChanges();
+                }
 
-            return Request.CreateResponse(HttpStatusCode.Accepted);
+                return Request.CreateResponse(HttpStatusCode.Accepted);
+            }
+            catch (Exception ex) {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
         }
 
         [HttpPost]

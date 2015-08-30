@@ -1,6 +1,6 @@
 ﻿
 <div>
-    <div id="page" ng-show="isHome">
+    <div id="page" >
         <!-- Page Loader -->
         <div id="pageloader">
             <div class="loader-item fa fa-spin text-color"></div>
@@ -209,91 +209,34 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-title text-left" data-animation="fadeInUp">
-                            <h2 class="title">Price Drop</h2>
+                            <h2 class="title">Hot News!</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="work-element col-xs-12 col-sm-6 col-md-3" data-animation="fadeInLeft">
+                    <div ng-repeat="item in blogList"  class="work-element col-xs-12 col-sm-6 col-md-3" data-animation="fadeInLeft">
                         <div class="work">
                             <!-- Image -->
-                            <img src="Assets/img/sections/property-1.jpg" width="270" height="197" alt="" />
+                            @*<img src="Assets/img/sections/property-1.jpg" width="270" height="197" alt="" />*@
+                            <div class="container" style="width:270px; height:197px; background-color:grey">
+                                <div class="row margin-20">
+                                    <h3 style="color:white">{{item.Title}}</h3>
+                                </div>
+                                <div class="row margin-20">
+                                    <div class="trim-info" ng-bind-html="item.Content"></div>
+                                </div>
+                            </div>
                             <span class="shadow"></span>
                             <div class="bg-hover"></div>
                             <div class="work-title text-center">
                                 <!-- Title -->
-                                <h3 class="title">Lorem ipsum dolor sit amet</h3>
+                                <h3 class="title">{{item.Title}}</h3>
                                 <!-- price-->
-                                <a href="#" class="btn btn-default">$10000</a>
+                                <a href="#/news?ID={{item.ID}}" class="btn btn-default">View News!</a>
                             </div>
                         </div>
-                        <div class="">
-                            <div class="col-md-4 bg-gray border">300m2</div>
-                            <div class="col-md-4 bg-gray border">Beds - 2</div>
-                            <div class="col-md-4 bg-gray border">Baths - 2</div>
-                        </div>
+
                     </div>
-                    <!-- .work-element -->
-                    <div class="work-element col-xs-12 col-sm-6 col-md-3" data-animation="fadeInRight">
-                        <div class="work">
-                            <!-- Image -->
-                            <img src="Assets/img/sections/property-2.jpg" width="270" height="197" alt="" />
-                            <span class="shadow"></span>
-                            <div class="bg-hover"></div>
-                            <div class="work-title text-center">
-                                <!-- Title -->
-                                <h3 class="title">Lorem ipsum dolor sit amet</h3>
-                                <!-- price-->
-                                <a href="#" class="btn btn-default">$10000</a>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="col-md-4 bg-gray border">300m2</div>
-                            <div class="col-md-4 bg-gray border">Beds - 2</div>
-                            <div class="col-md-4 bg-gray border">Baths - 2</div>
-                        </div>
-                    </div>
-                    <!-- .work-element -->
-                    <div class="work-element col-xs-12 col-sm-6 col-md-3" data-animation="fadeInLeft">
-                        <div class="work">
-                            <!-- Image -->
-                            <img src="Assets/img/sections/property-3.jpg" width="270" height="197" alt="" />
-                            <span class="shadow"></span>
-                            <div class="bg-hover"></div>
-                            <div class="work-title text-center">
-                                <!-- Title -->
-                                <h3 class="title">Lorem ipsum dolor sit amet</h3>
-                                <!-- price-->
-                                <a href="#" class="btn btn-default">$10000</a>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="col-md-4 bg-gray border">300m2</div>
-                            <div class="col-md-4 bg-gray border">Beds - 2</div>
-                            <div class="col-md-4 bg-gray border">Baths - 2</div>
-                        </div>
-                    </div>
-                    <!-- .work-element -->
-                    <div class="work-element col-xs-12 col-sm-6 col-md-3" data-animation="fadeInRight">
-                        <div class="work">
-                            <!-- Image -->
-                            <img src="Assets/img/sections/property-4.jpg" width="270" height="197" alt="" />
-                            <span class="shadow"></span>
-                            <div class="bg-hover"></div>
-                            <div class="work-title text-center">
-                                <!-- Title -->
-                                <h3 class="title">Lorem ipsum dolor sit amet</h3>
-                                <!-- price-->
-                                <a href="#" class="btn btn-default">$10000</a>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="col-md-4 bg-gray border">300m2</div>
-                            <div class="col-md-4 bg-gray border">Beds - 2</div>
-                            <div class="col-md-4 bg-gray border">Baths - 2</div>
-                        </div>
-                    </div>
-                    <!-- .work-element -->
                 </div>
             </div>
         </section>

@@ -6,8 +6,8 @@ var appMaster = {
 		Page Loader 
 	--------------------- */
 	pageLoader: function(){
-		$(".loader-item").delay(700).fadeOut("slow");
-		$("#pageloader").delay(800).fadeOut("slow");
+		$(".loader-item").delay(200).fadeOut("slow");
+		$("#pageloader").delay(200).fadeOut("slow");
 	},
 	/* ---------------------
 		Navigation Menu 
@@ -920,7 +920,6 @@ function loadAll() {
     appMaster.videotextSlider();
     appMaster.countDown();
     appMaster.priceRange();
-    appMaster.allCharts();
     appMaster.masonryGrid();
     appMaster.productZoom();
     appMaster.sideNav();

@@ -4,7 +4,8 @@
     'home',
     'signIn',
     'register',
-    'blogManager'
+    'blogManager',
+    'news'
 ]);
 
 
@@ -54,6 +55,10 @@ app.config(['$provide', '$routeProvider', '$httpProvider', function ($provide, $
     $routeProvider.when('/blogmanager', {
         templateUrl: 'App/BlogManager',
         controller: 'blogManagerCtrl'
+    });
+    $routeProvider.when('/news/:ID?', {
+        templateUrl: 'App/ViewNews',
+        controller: 'newsCtrl'
     });
     
     $routeProvider.otherwise({
