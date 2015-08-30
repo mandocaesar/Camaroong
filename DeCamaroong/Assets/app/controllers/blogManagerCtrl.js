@@ -8,7 +8,8 @@
         {
             $http.get('/api/WS_Blog/GetUserBlogItems')
                 .success(function (data, status, headers, config) {
-                    $scope.todoList = data;
+                    console.log(data);
+                    $scope.blogList = data;
                 });
         }
 

@@ -38,13 +38,7 @@ namespace DeCamaroong.Controllers
         [Authorize]
         public List<BlogItem> GetUserBlogItems()
         {
-            //string userId = Request.GetOwinContext().Authentication.User.Identity.GetUserId();
-
-            //var currentUser = UserManager.FindById(userId);
-
-            //return currentUser.BlogItems;
             return db.BlogItems.ToList();
-            
         }
 
         [HttpPost]
@@ -87,19 +81,18 @@ namespace DeCamaroong.Controllers
                 return Request.CreateResponse<List<string>>(HttpStatusCode.BadRequest, errors);
             }
 
-            var user = db.Users.Where(u => u.firstName == "Test").FirstOrDefault();
         }
 
         [HttpPost]
         [Authorize]
-        async public Task<HttpResponseMessage> CompletePostItem(int id)
+        async public Task<HttpResponseMessage> UpdatePostItem(BlogItem item)
         {
-            var item = db.BlogItems.Where(t => t.ID == id).FirstOrDefault();
-            if (item != null)
+            var it = db.BlogItems.Where(t => t.ID == item.ID).FirstOrDefault();
+            if (it != null)
             {
-               // item.completed = true;
                 await db.SaveChangesAsync();
             }
+
             return Request.CreateResponse(HttpStatusCode.Accepted);
         }
 

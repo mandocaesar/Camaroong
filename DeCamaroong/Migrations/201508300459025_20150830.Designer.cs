@@ -13,7 +13,7 @@ namespace DeCamaroong.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201508300451476_20150830"; }
+            get { return "201508300459025_20150830"; }
         }
         
         string IMigrationMetadata.Source
