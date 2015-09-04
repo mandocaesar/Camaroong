@@ -35,5 +35,11 @@ namespace DeCamaroong.Controllers
         {
             return PartialView();
         }
+
+        [Authorize]
+        public ActionResult Mail()
+        {
+            return PartialView();
+        }
     }
 }

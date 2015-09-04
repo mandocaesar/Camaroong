@@ -11,8 +11,10 @@ namespace DeCamaroong.Domain
         [Key]
         public int ID { get; set; }
         public string Email { get; set; }
+        public string Fullname { get; set; }
         public string Phone { get; set; }
-
+        public DateTime createdDate { get; set; }
         public string Message { get; set; }
+        public bool isNew { get; set; }
     }
 }

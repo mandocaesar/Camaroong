@@ -18,6 +18,7 @@ namespace DeCamaroong
 
             bundles.Add(new ScriptBundle("~/ng").Include(
                         "~/Assets/ng/angular.min.js",
+                        "~/Assets/ng/ui-bootstrap-tpls-0.13.4.min.js",
                         "~/Assets/ng/angular-route.min.js",
                         "~/Assets/ng/angular-cookies.min.js",
                         "~/Assets/ng/textAngular-rangy.min.js",

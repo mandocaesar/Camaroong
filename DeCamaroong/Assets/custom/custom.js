@@ -6,8 +6,8 @@ var appMaster = {
 		Page Loader 
 	--------------------- */
 	pageLoader: function(){
-		$(".loader-item").delay(200).fadeOut("slow");
-		$("#pageloader").delay(200).fadeOut("slow");
+		//$(".loader-item").delay(100).fadeOut("slow");
+		$("#pageloader").fadeOut("slow");
 	},
 	/* ---------------------
 		Navigation Menu 
@@ -917,19 +917,19 @@ function loadAll() {
     appMaster.subscribeForm();
     appMaster.navMenu();
     appMaster.typedSlider();
-    appMaster.videotextSlider();
+    //appMaster.videotextSlider();
     appMaster.countDown();
     appMaster.priceRange();
-    appMaster.masonryGrid();
-    appMaster.productZoom();
+    //appMaster.masonryGrid();
+    //appMaster.productZoom();
     appMaster.sideNav();
     appMaster.fullScreen();
     appMaster.fancySelect();
-    appMaster.hostedVideo();
+   // appMaster.hostedVideo();
     appMaster.gridRotator();
     appMaster.datePicker();
     appMaster.timePicker();
-    appMaster.sidebarSticky();
+    //appMaster.sidebarSticky();
 }
 
 
@@ -938,7 +938,6 @@ function loadAll() {
 	Placeholder for Image
 	-------------------------------------------- */	
 $(window).load(function () {
-    loadAll();
 		
 	$('img:not(".site_logo")').each(function() {
 		if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){
@@ -1102,7 +1101,8 @@ var header = jQuery('#slider-section'),
       }
 });
 
-$(window).load(function() {
-	appMaster.hiddenFooter();	
-	appMaster.masonryGrid();
+  $(window).load(function () {
+      loadAll();
+	//appMaster.hiddenFooter();	
+	//appMaster.masonryGrid();
 });

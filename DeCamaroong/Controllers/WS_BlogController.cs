@@ -40,10 +40,16 @@ namespace DeCamaroong.Controllers
             return db.BlogItems.ToList();
         }
 
+        [HttpGet]
+        public List<BlogItem> GetUserBlogItemsHome()
+        {
+            return db.BlogItems.OrderBy(e => e.date).Take(4).ToList();
+        }
+
         [HttpPost]
         public BlogItem GetUserBlogItem(int ID)
         {
-            return db.BlogItems.Where(e=>e.ID == ID).FirstOrDefault();
+            return db.BlogItems.FirstOrDefault(e => e.ID == ID);
         }
 
         [HttpPost]
@@ -52,12 +58,8 @@ namespace DeCamaroong.Controllers
         {
             var modelStateErrors = ModelState.Values.ToList();
 
-            List<string> errors = new List<string>();
-
-            foreach (var s in modelStateErrors)
-                foreach (var e in s.Errors)
-                    if (e.ErrorMessage != null && e.ErrorMessage.Trim() != "")
-                        errors.Add(e.ErrorMessage);
+            List<string> errors = (from s in modelStateErrors from e in s.Errors where e.ErrorMessage != null 
+                                       && e.ErrorMessage.Trim() != "" select e.ErrorMessage).ToList();
 
             if (errors.Count == 0)
             {
@@ -68,9 +70,9 @@ namespace DeCamaroong.Controllers
                     var currentUser = UserManager.FindById(userId);
                     currentUser.BlogItems.Add(new BlogItem()
                     {
-                       Content = item.Content,
-                       Title = item.Title,
-                       date = DateTime.Now
+                        Content = item.Content,
+                        Title = item.Title,
+                        date = DateTime.Now
                     });
 
                     UserManager.Update(currentUser);
@@ -94,7 +96,7 @@ namespace DeCamaroong.Controllers
         {
             try
             {
-                var it = db.BlogItems.Where(t => t.ID == item.ID).FirstOrDefault();
+                var it = db.BlogItems.FirstOrDefault(t => t.ID == item.ID);
                 if (it != null)
                 {
                     it.Content = item.Content;
@@ -104,22 +106,30 @@ namespace DeCamaroong.Controllers
 
                 return Request.CreateResponse(HttpStatusCode.Accepted);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
         }
 
         [HttpPost]
         [Authorize]
-        async public Task<HttpResponseMessage> DeleteBlogItem(int id)
+        public HttpResponseMessage DeleteBlogItem(int id)
         {
-            var item = db.BlogItems.Where(t => t.ID == id).FirstOrDefault();
-            if (item != null)
+            try
             {
-                db.BlogItems.Remove(item);
-                await db.SaveChangesAsync();
+                var item = db.BlogItems.FirstOrDefault(t => t.ID == id);
+                if (item != null)
+                {
+                    db.BlogItems.Remove(item);
+                    db.SaveChangesAsync();
+                }
+                return Request.CreateResponse(HttpStatusCode.Accepted);
             }
-            return Request.CreateResponse(HttpStatusCode.Accepted);
+            catch (Exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
         }
 
 

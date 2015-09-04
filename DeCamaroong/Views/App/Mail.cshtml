@@ -1,0 +1,88 @@
+﻿
+<header id="sticker" class="sticky-navigation">
+    <!-- Sticky Menu -->
+    <div class="sticky-menu relative">
+        <!-- navbar -->
+        <div id="navigation" class="navbar navbar-default navbar-bg-light" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="navbar-header">
+                            <!-- Button For Responsive toggle -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <!-- Logo -->
+                            <div class="top-logo-left-header"><h5>De Camaroong Residence</h5></div>
+
+                        </div>
+                        <!-- Navbar Collapse -->
+                        <div id="topnav" class="navbar-collapse collapse">
+                            <!-- nav -->
+                            <ul class="nav navbar-nav">
+                                <li><a href="#home" class="scroll">Home</a></li>
+                                <li><a href="#blogmanager" class="scroll">News</a></li>
+                                <li><a href="#mail" class="scroll active">Message <span class="badge">{{newmail}}</span></a></li>
+                                <li ng-show="loggedIn">
+                                    <a href="" ng-click="logout()">{{username}} | Sign Out</a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- navbar -->
+    </div>
+    <!-- Sticky Menu -->
+</header>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th class="text-center">From</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Phone</th>
+            <th class="text-center">Date</th>
+            <th class="text-center">Message</th>
+            <th class="text-center">View Message</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="x in mails | orderBy : 'createdDate'">
+            <td>{{ x.Fullname }}</td>
+            <td>{{ x.Email }}</td>
+            <td>{{ x.Phone }}</td>
+            <td>{{ x.createdDate }}</td>
+            <td><span style="width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ x.Message }}</span></td>
+            <td><span class="btn btn-success" ng-click="view($index)"><i class="glyphicon glyphicon-open-file"></i> View </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/ng-template" id="modalmail.html">
+    <div class="modal-header">
+        <h3 class="modal-title">{{viewMail.Fullname}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row">From:({{viewMail.Email}})</div>
+            <div class="row">{{viewMail.createdDate|date:"MM/dd/yyyy 'at' h:mma"}}</div>
+
+            <div class="row margin-top-5"><p>{{viewMail.Message}}</p></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        @* <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>*@
+    </div>
+</script>

@@ -5,7 +5,8 @@
     'signIn',
     'register',
     'blogManager',
-    'news'
+    'news',
+    'mail'
 ]);
 
 
@@ -59,6 +60,10 @@ app.config(['$provide', '$routeProvider', '$httpProvider', function ($provide, $
     $routeProvider.when('/news/:ID?', {
         templateUrl: 'App/ViewNews',
         controller: 'newsCtrl'
+    });
+    $routeProvider.when('/mail', {
+        templateUrl: 'App/Mail',
+        controller: 'mailCtrl'
     });
     
     $routeProvider.otherwise({
@@ -123,8 +128,6 @@ app.run(['$rootScope', '$http', '$cookies', '$cookieStore', function ($rootScope
                         else
                             $rootScope.loggedIn = false;
                     });
-
-
             })
             .error(function (data, status, headers, config) {
                 $rootScope.loggedIn = false;
