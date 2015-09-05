@@ -23,7 +23,8 @@ namespace DeCamaroong
                         "~/Assets/ng/angular-cookies.min.js",
                         "~/Assets/ng/textAngular-rangy.min.js",
                         "~/Assets/ng/textAngular-sanitize.min.js",
-                        "~/Assets/ng/textAngular.min.js"
+                        "~/Assets/ng/textAngular.min.js",
+                        "~/Assets/ng/ng-flow-standalone.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/app").IncludeDirectory("~/Assets/app", "*.js", true));

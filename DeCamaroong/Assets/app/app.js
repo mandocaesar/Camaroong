@@ -6,7 +6,9 @@
     'register',
     'blogManager',
     'news',
-    'mail'
+    'mail',
+    'building',
+    'addBuilding'
 ]);
 
 
@@ -64,6 +66,14 @@ app.config(['$provide', '$routeProvider', '$httpProvider', function ($provide, $
     $routeProvider.when('/mail', {
         templateUrl: 'App/Mail',
         controller: 'mailCtrl'
+    });
+    $routeProvider.when('/building', {
+        templateUrl: 'App/Building',
+        controller: 'buildingCtrl'
+    });
+    $routeProvider.when('/addBuilding/:Id?', {
+        templateUrl: 'App/AddEditBuilding',
+        controller: 'addBuildingCtrl'
     });
     
     $routeProvider.otherwise({

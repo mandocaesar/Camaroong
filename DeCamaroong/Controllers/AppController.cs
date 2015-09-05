@@ -41,5 +41,18 @@ namespace DeCamaroong.Controllers
         {
             return PartialView();
         }
+
+        [Authorize]
+        public ActionResult Building()
+        {
+            return PartialView();
+        }
+
+        [Authorize]
+        public ActionResult AddEditBuilding()
+        {
+            return PartialView();
+        }
+
     }
 }
