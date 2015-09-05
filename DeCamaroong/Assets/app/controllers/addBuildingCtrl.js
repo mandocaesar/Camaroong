@@ -16,10 +16,25 @@
         }
 
         $scope.delete = function () {
-            var postUrl = '../api/WSBuilding/DeleteBulding';
+            var postUrl = '../api/WSBuilding/DeleteBuilding';
             $http.post(postUrl, item)
                 .success(function (data, status, headers, config) {
                     //Modal
+                }).error(function (data, status, headers, config) {
+                    //Modal
+                });
+        }
+
+        $scope.deleteImage = function(id, imageIdx) {
+            ////imageIdx = imageIdx + 1;
+            var value = id + '-' + imageIdx;
+            var postUrl = '../api/WSBuilding/DeleteImage?idx=' + value;
+            
+            console.log(value);
+            var item = { idx: value };
+            $http.get(postUrl)
+                .success(function (data, status, headers, config) {
+                    $scope.getBuilding($scope.ID);
                 }).error(function (data, status, headers, config) {
                     //Modal
                 });
@@ -47,6 +62,7 @@
                     MainImage: false
                 });
             });
+
             console.log($scope.building);
             // $scope.building.Images = $flow.files;
             $http.post(postUrl, $scope.building)
@@ -61,13 +77,13 @@
         }
 
 
-        //if (!$rootScope.loggedIn) {
-        //    //    window.location = '#/signin';
-        //} else {
+        if (!$rootScope.loggedIn) {
+            window.location = '#/signin';
+        } else {
             if ($scope.ID != null) {
                 $scope.getBuilding($scope.ID);
             }
-        //}
+        }
 
 
         $scope.ok = function () {

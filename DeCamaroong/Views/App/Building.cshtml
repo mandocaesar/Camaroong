@@ -68,7 +68,7 @@
                 <td>{{ x.BathRoom }}</td>
                 <td>{{ x.BedRoom }}</td>
                 <td>{{ x.PostDate| date:"MM/dd/yyyy 'at' h:mma" }}</td>
-                <td>{{ x.Price }}</td>
+                <td>{{ x.Price | currency:"Rp"}}</td>
                 <td><span class="btn btn-success" ng-click="view($index)"><i class="glyphicon glyphicon-open-file"></i> View </span></td>
             </tr>
         </tbody>

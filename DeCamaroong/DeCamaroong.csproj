@@ -280,6 +280,7 @@
     <Content Include="Assets\custom\jquery.prettyPhoto.js" />
     <Content Include="Assets\custom\jquery.sticky.js" />
     <Content Include="Assets\ng\ng-flow-standalone.min.js" />
+    <Content Include="Assets\ng\ng-scroll.js" />
     <Content Include="Assets\ng\ui-bootstrap-tpls-0.13.4.min.js" />
     <Content Include="Assets\rs-plugin\jquery.themepunch.revolution.min.js" />
     <Content Include="Assets\rs-plugin\jquery.themepunch.tools.min.js" />

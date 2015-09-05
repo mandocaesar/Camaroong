@@ -16,7 +16,8 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <!-- Logo -->
-                            <div class="top-logo-left-header"><h5>De Camaroong Residence</h5>
+                            <div class="top-logo-left-header">
+                                <h5>De Camaroong Residence</h5>
                             </div>
 
                         </div>
@@ -57,76 +58,94 @@
 </div>
 
 <div class="container margin-top-5 margin-10" style="margin-left: auto; margin-right: auto; margin-top: 50px;">
-    <div class="row form-group">
+    <div class="row">
         <div class="col-lg-6">Title</div>
         <div class="col-lg-6">
             <input type="text" class="form-control" ng-model="building.Title" />
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="col-lg-6">Land Square</div>
         <div class="col-lg-6">
             <input type="text" min="0" class="form-control" ng-model="building.LandSquare" />
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="col-lg-6">Building Square</div>
         <div class="col-lg-6">
             <input type="text" min="0" class="form-control" ng-model="building.BuildingSquare" />
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="col-lg-6">Bathroom</div>
         <div class="col-lg-6">
             <input type="text" min="0" class="form-control" ng-model="building.BathRoom" />
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="col-lg-6">BedRoom</div>
         <div class="col-lg-6">
-            <input type="text" class="form-control" ng-model="building.BedRoom"/>
+            <input type="text" class="form-control" ng-model="building.BedRoom" />
         </div>
 
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="col-lg-6">Content</div>
         <div class="col-lg-6">
             <textarea class="form-control" ng-model="building.Content"></textarea>
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="col-lg-6">Price</div>
-        <div class="col-lg-6"><input type="number" class="form-control" ng-model="building.Price" /></div>
+        <div class="col-lg-6">
+            <input type="number" class="form-control" ng-model="building.Price" />
+        </div>
     </div>
 </div>
 <div class="container" style="; margin-top: 30px;">
-
-    <div flow-init flow-name="obj.flow"
-         flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
-         flow-files-added="processFiles($files)" style="margin-top: 50px;">
-        <div class="col-lg-6">
-            <div class="drop" flow-drop ng-class="dropClass">
-                <div class="col">Drop your image here!</div>
-                <div class="col text-right"><span class="btn btn-transparent-black" style="color: white" flow-btn>Upload File</span></div>
+    <fieldset>
+        <h4>Images</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th  >Image</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="image in building.Images">
+                <td class="text-center"><img src="{{image.Content}}" width="100px" height="100px" /></td>
+                <td class="text-center"><span class="btn btn-danger" ng-click="deleteImage(building.ID, $index)"><i class="glyphicon glyphicon-trash"></i> Delete</span></td>
+            </tr>
+            </tbody>
+        </table>
+        <div flow-init flow-name="obj.flow"
+             flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+             flow-files-added="processFiles($files)" style="margin-top: 50px;">
+            <div class="col-lg-6">
+                <div class="drop" flow-drop ng-class="dropClass">
+                    <div class="col">Drop your image here!</div>
+                    <div class="col text-right"><span class="btn btn-transparent-black" style="color: white" flow-btn>Upload File</span></div>
+                </div>
+            </div>
+            <div class="col-lg-6" style="overflow-y: scroll; height: 100px;">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">File Name</th>
+                            <th class="text-center">Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="file in $flow.files">
+                            <td>{{$index+1}}</td>
+                            <td>{{file.name}}</td>
+                            <td>{{file.size / 1024}} Kb</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="col-lg-6" style="overflow-y: scroll; height: 100px;">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th class="text-center">ID</th>
-                        <th class="text-center">File Name</th>
-                        <th class="text-center">Size</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="file in $flow.files">
-                        <td>{{$index+1}}</td>
-                        <td>{{file.name}}</td>
-                        <td>{{file.size / 1024}} Kb</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    </fieldset>
 </div>

@@ -85,6 +85,28 @@ namespace DeCamaroong.Controllers
             }
         }
 
+        [HttpGet]
+        [Authorize]
+        public HttpResponseMessage DeleteImage(string idx)
+        {
+            try
+            {
+                var value = idx.Split('-');
+                int id = int.Parse(value[0].ToString());
+                int imageIdx = int.Parse(value[1].ToString());
+                db.Configuration.ProxyCreationEnabled = true;
+                db.Configuration.LazyLoadingEnabled = true;
+
+                db.Buildings.Include(p=>p.Images).First(e => e.ID == id).Images.RemoveAt(imageIdx);
+                db.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+        }
+
         [HttpPost]
         [Authorize]
         public HttpResponseMessage PostBuilding(PropertyBuilding building)

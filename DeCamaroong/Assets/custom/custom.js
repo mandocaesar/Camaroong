@@ -910,11 +910,11 @@ function loadAll() {
     appMaster.funFactor();
     appMaster.parallaxBg();
     appMaster.portfolioFilter();
-    appMaster.prettyPhoto();
-    appMaster.backgroundVideo();
-    appMaster.simplecontactForm();
-    appMaster.careersform();
-    appMaster.subscribeForm();
+    //appMaster.prettyPhoto();
+    //appMaster.backgroundVideo();
+    //appMaster.simplecontactForm();
+    //appMaster.careersform();
+    //appMaster.subscribeForm();
     appMaster.navMenu();
     appMaster.typedSlider();
     //appMaster.videotextSlider();
@@ -922,7 +922,7 @@ function loadAll() {
     appMaster.priceRange();
     //appMaster.masonryGrid();
     //appMaster.productZoom();
-    appMaster.sideNav();
+   // appMaster.sideNav();
     appMaster.fullScreen();
     appMaster.fancySelect();
    // appMaster.hostedVideo();
