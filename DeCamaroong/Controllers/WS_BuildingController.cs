@@ -32,7 +32,6 @@ namespace DeCamaroong.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public HttpResponseMessage GetBuilding(int Id)
         {
             try

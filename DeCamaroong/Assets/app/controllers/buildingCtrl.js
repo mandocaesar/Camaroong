@@ -18,18 +18,35 @@
                 });
         }
 
-        $scope.getBuildings = function () {
-            $http.get('/api/WsBuilding/GetAllBuilding').success(function (data) {
-                $scope.buildings = data;
-              
+        $scope.getBuilding = function (Id) {
+
+            $scope.building = {};
+            $http.get('/api/WsBuilding/GetBuilding?Id=' + Id).success(function (data) {
+                $scope.building = data;
+
             }).error(function (s) { console.log(s) });
         }
 
+        $scope.getBuildings = function () {
+            $http.get('/api/WsBuilding/GetAllBuilding').success(function (data) {
+                $scope.buildings = data;
+
+            }).error(function (s) { console.log(s) });
+        }
+
+
+       
+
         if (!$rootScope.loggedIn) {
-               window.location = '#/signin';
+           
+            if ($scope.ID != null) {
+                $scope.getBuilding($scope.ID);
+            } else {
+                //window.location = '#/signin';
+            }
         } else {
             $scope.getBuildings();
-       }
+        }
 
         $scope.AddNew = function () {
             window.location = '#/addBuilding';
@@ -42,4 +59,6 @@
         $scope.ok = function () {
             $rootScope.modal.close();
         }
+
+        
     }]);

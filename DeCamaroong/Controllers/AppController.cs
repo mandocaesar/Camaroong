@@ -29,6 +29,10 @@ namespace DeCamaroong.Controllers
             return PartialView();
         }
 
+        public ActionResult ViewBuilding()
+        {
+            return PartialView();
+        }
 
         [Authorize]
         public ActionResult BlogManager()

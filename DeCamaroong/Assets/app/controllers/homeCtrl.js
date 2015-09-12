@@ -43,8 +43,7 @@
         }
 
         $scope.getDetail = function (index) {
-            $scope.building = $rootScope.buildings[index];
-            console.log($scope.building);
+            window.location.href = "#/viewBuilding?Id=" + index;
         };
 
         $scope.getList();

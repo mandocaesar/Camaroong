@@ -71,6 +71,10 @@ app.config(['$provide', '$routeProvider', '$httpProvider', function ($provide, $
         templateUrl: 'App/Building',
         controller: 'buildingCtrl'
     });
+    $routeProvider.when('/viewBuilding/:Id?', {
+        templateUrl: 'App/ViewBuilding',
+        controller: 'buildingCtrl'
+    });
     $routeProvider.when('/addBuilding/:Id?', {
         templateUrl: 'App/AddEditBuilding',
         controller: 'addBuildingCtrl'

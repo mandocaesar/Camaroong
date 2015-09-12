@@ -1,0 +1,347 @@
+﻿<div>
+    <div id="page">
+        <!-- Page Loader -->
+        @*<div id="pageloader">
+                <div class="loader-item fa fa-spin text-color"></div>
+            </div>*@
+        <!-- Sticky Navbar -->
+        <header id="sticker" class="sticky-navigation">
+            <!-- Sticky Menu -->
+            <div class="sticky-menu relative">
+                <!-- navbar -->
+                <div id="navigation" class="navbar navbar-default navbar-bg-light" role="navigation">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="navbar-header">
+                                    <!-- Button For Responsive toggle -->
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <!-- Logo -->
+
+                                    <a class="navbar-brand" href="index.html">
+                                        <img class="site_logo" alt="Site Logo" src="" />
+                                    </a>
+                                </div>
+                                <!-- Navbar Collapse -->
+                                <div id="topnav" class="navbar-collapse collapse">
+                                    <!-- nav -->
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="#home" class="scroll">Home</a></li>
+                                        <!-- Header Contact -->
+                                        <li class="hidden-767">
+                                            <a class="header-contact">
+                                                <span>
+                                                    <i class="fa fa-mobile"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <!-- Header Search -->
+                                        <li class="hidden-767">
+                                            <a class="header-search">
+                                                <span>
+                                                    <i class="fa fa-search"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <!-- Header Share -->
+                                        <li class="hidden-767">
+                                            <a class="header-share">
+                                                <span>
+                                                    <i class="fa fa-share-alt"></i>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- Right nav -->
+                                    <!-- Header Contact Content -->
+                                    <div class="bg-white hide-show-content no-display header-contact-content">
+                                        <p class="vertically-absolute-middle">
+                                            Call Us
+                                            <strong>+0 (123) 456 78 90</strong>
+                                        </p>
+                                        <button class="close">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <!-- Header Contact Content -->
+                                    <!-- Header Search Content -->
+                                    <div class="bg-white hide-show-content no-display header-search-content">
+                                        <form role="search" class="navbar-form vertically-absolute-middle">
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Enter your text &amp; Search Here" class="form-control" id="s" name="s" value="" />
+                                            </div>
+                                        </form>
+                                        <button class="close">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <!-- Header Search Content -->
+                                    <!-- Header Share Content -->
+                                    <div class="bg-white hide-show-content no-display header-share-content">
+                                        <div class="vertically-absolute-middle social-icon gray-bg icons-circle i-3x">
+                                            <a>
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                            <a>
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                            <a>
+                                                <i class="fa fa-pinterest"></i>
+                                            </a>
+                                            <a>
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                            <a>
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </div>
+                                        <button class="close">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <!-- Header Share Content -->
+                                </div>
+                                <!-- /.navbar-collapse -->
+                            </div>
+                            <!-- /.col-md-12 -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+                <!-- navbar -->
+            </div>
+            <!-- Sticky Menu -->
+        </header>
+        <!-- Sticky Navbar -->
+        <section id="detail" class="page-section">
+            <div class="container center-block">
+                <div class="section-title" data-animation="fadeInUp">
+                    <!-- Heading -->
+                    <h2 class="title">{{building.Title}} - Header</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 text-center" data-animation="fadeInUp">
+                        <div class="row">
+                            <img src={{building.Images[0].Content}} width="400px" height="300px" />
+                        </div>
+                        <div class="row">
+                            <div class="row">
+                                <div class="col">
+                                    <b>Price</b>
+                                </div>
+                                <div class="col">{{building.Price| currency:"Rp"}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-animation="fadeInUp">
+
+                        <div class="row">
+                            <div class="col">Building Square</div>
+                            <div class="col">{{building.BuildingSquare}} m2</div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col">Land Square</div>
+                            <div class="col">{{building.LandSquare}} m2</div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col">Bath Rooms</div>
+                            <div class="col">{{building.BathRoom}}</div>
+                        </div>
+                        <hr />
+
+                        <div class="row">
+                            <div class="col">Bed Rooms</div>
+                            <div class="col">{{building.BedRoom}} room</div>
+                        </div>
+                        <hr />
+
+                    </div>
+                </div>
+                <div class="row text-primary text-center">
+                    <div class="col">Location Condition</div>
+                    <div class="col">{{building.Content}}</div>
+                </div>
+            </div>
+
+        </section>
+        <footer id="footer">
+            <div class="footer-widget">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3 widget bottom-xs-pad-20">
+                            <div class="widget-title">
+                                <!-- Title -->
+                                <h3 class="title">About Us</h3>
+                            </div>
+                            <!-- Text -->
+                            <p>We like to provide great site with complete features what you want to impletement in your business!</p>
+                            <!-- Address -->
+                            <p>
+                                <strong>Office:</strong> Zozotheme.com
+                                <br />No. 12, Ribon Building,
+                                <br />Walse street, Australia.
+                            </p>
+                            <!-- Phone -->
+                            <p>
+                                <strong>Call Us:</strong> +0 (123) 456-78-90 or
+                                <br />+0 (123) 456-78-90
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3 widget bottom-xs-pad-20">
+                            <div class="widget-title">
+                                <!-- Title -->
+                                <h3 class="title">Blogroll</h3>
+                            </div>
+                            <nav>
+                                <ul>
+                                    <!-- List Items -->
+                                    <li>
+                                        <a href="#">Complete Documentations</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Additional Plugins &amp; Modules</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Child Themes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Support Forums</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Useful Blog</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="widget-title">
+                                <!-- Title -->
+                                <h3 class="title">My account</h3>
+                            </div>
+                            <nav>
+                                <ul>
+                                    <!-- List Items -->
+                                    <li>
+                                        <a href="#">My account</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Order History</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shopping Cart</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3 widget">
+                            <div class="widget-title">
+                                <!-- Title -->
+                                <h3 class="title">Latest News</h3>
+                            </div>
+                            <nav>
+                                <ul class="footer-blog">
+                                    <!-- List Items -->
+                                    <li>
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3 widget newsletter bottom-xs-pad-20">
+                            <div class="widget-title">
+                                <!-- Title -->
+                                <h3 class="title">Newsletter Signup</h3>
+                            </div>
+                            <div>
+                                <!-- Text -->
+                                <p>Subscribe to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</p>
+                                <p class="form-message1" style="display: none;"></p>
+                                <div class="clearfix"></div>
+                                <!-- Form -->
+                                <form id="subscribe_form" action="subscription.php" method="post" name="subscribe_form" role="form">
+                                    <div class="input-text form-group has-feedback">
+                                        <input class="form-control" type="email" value="" name="subscribe_email" />
+                                        <button class="submit bg-color" type="submit">
+                                            <span class="glyphicon glyphicon-arrow-right"></span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- Count -->
+                            <div class="footer-count">
+                                <p class="count-number" data-count="93550">
+                                    total downloads :
+                                    <span class="counter"></span>
+                                </p>
+                            </div>
+                            <div class="footer-count">
+                                <p class="count-number" data-count="79550">
+                                    happy clients :
+                                    <span class="counter"></span>
+                                </p>
+                            </div>
+                            <!-- Social Links -->
+                            <div class="social-icon gray-bg icons-circle i-3x">
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-pinterest"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-google"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- .newsletter -->
+                    </div>
+                </div>
+            </div>
+            <!-- footer-top -->
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <!-- Copyrights -->
+                        <div class="col-xs-10 col-sm-6 col-md-6">
+                            &copy; 2015 <a href="#">CopyLeft</a>
+                            <br />
+                            <!-- Terms Link -->
+
+                            <a href="#">Terms of Use</a> /
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                        <div class="col-xs-2  col-sm-6 col-md-6 text-right page-scroll gray-bg icons-circle i-3x">
+                            <!-- Goto Top -->
+                            <a href="#page">
+                                <i class="glyphicon glyphicon-arrow-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer-bottom -->
+        </footer>
+        <!-- footer -->
+    </div>
+</div>s

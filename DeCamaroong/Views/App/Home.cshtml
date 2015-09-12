@@ -426,7 +426,7 @@
                                 <!-- Title -->
                                 <h3 class="title">{{x.Title}}</h3>
                                 <!-- price-->
-                                <a scroll-to="detail" class="btn btn-default scroll" ng-click="getDetail($index)">Rp {{x.Price}}</a>
+                                <a scroll-to="detail" class="btn btn-default scroll" ng-click="getDetail(x.ID)">Rp {{x.Price}}</a>
                             </div>
                         </div>
                         <div class="">
@@ -438,58 +438,7 @@
                 </div>
             </div>
         </section>
-        <section id="detail" class="page-section">
-            <div class="container center-block">
-                <div class="section-title" data-animation="fadeInUp">
-                    <!-- Heading -->
-                    <h2 class="title">{{building.Title}} - Header</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 text-center" data-animation="fadeInUp">
-                        <div class="row">
-                            <img src={{building.Images[0].Content}} width="400px" height="300px"/>
-                        </div>
-                        <div class="row">
-                            <div class="row">
-                                <div class="col"><b>Price</b>
-                                </div>
-                                <div class="col">{{building.Price| currency:"Rp"}}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4" data-animation="fadeInUp">
 
-                        <div class="row">
-                            <div class="col">Building Square</div>
-                            <div class="col">{{building.BuildingSquare}} m2</div>
-                        </div>
-                        <hr/>
-                        <div class="row">
-                            <div class="col">Land Square</div>
-                            <div class="col">{{building.LandSquare}} m2</div>
-                        </div>
-                        <hr/>
-                        <div class="row">
-                            <div class="col">Bath Rooms</div>
-                            <div class="col">{{building.BathRoom}}</div>
-                        </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col">Bed Rooms</div>
-                            <div class="col">{{building.BedRoom}} room</div>
-                        </div>
-                        <hr/>
-
-                    </div>
-                </div>
-                <div class="row text-primary text-center">
-                    <div class="col">Location Condition</div>
-                    <div class="col">{{building.Content}}</div>
-                </div>
-            </div>
-
-        </section>
         <!-- properties -->
         @*<section id="team" class="page-section white">
             <div class="image-bg content-in fixed" data-background="Assets/img/sections/bg/bg-1.jpg">
