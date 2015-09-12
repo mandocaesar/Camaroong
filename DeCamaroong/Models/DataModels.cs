@@ -27,6 +27,7 @@ namespace DeCamaroong.Models
         public DbSet<Mail> Mails { get; set; }
 
         public DbSet<PropertyBuilding> Buildings {get;set;}
+        public DbSet<Gallery> Galleries { get; set; }
 
     }
 

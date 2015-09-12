@@ -79,7 +79,16 @@ app.config(['$provide', '$routeProvider', '$httpProvider', function ($provide, $
         templateUrl: 'App/AddEditBuilding',
         controller: 'addBuildingCtrl'
     });
-    
+
+    $routeProvider.when('/Gallery', {
+        templateUrl: 'App/Gallery',
+        controller: 'galleryCtrl'
+    });
+  
+    $routeProvider.when('/manageGallery', {
+        templateUrl: 'App/ManageGallery',
+        controller: 'manageGalleryCtrl'
+    });
     $routeProvider.otherwise({
         redirectTo: '/home'
     });    

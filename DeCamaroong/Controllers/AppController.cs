@@ -58,5 +58,15 @@ namespace DeCamaroong.Controllers
             return PartialView();
         }
 
+        public ActionResult ManageGallery()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Gallery()
+        {
+            return PartialView();
+        }
+
     }
 }
