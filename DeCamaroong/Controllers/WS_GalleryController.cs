@@ -32,13 +32,13 @@ namespace DeCamaroong.Controllers
 
         [HttpPost]
         [Authorize]
-        public HttpResponseMessage Add(Gallery item)
+        public HttpResponseMessage Add(List<Gallery> items)
         {
             try
             {
                 using (var db = new DBContext())
                 {
-                    db.Galleries.Add(item);
+                    db.Galleries.AddRange(items);
                     db.SaveChanges();
                     return Request.CreateResponse(HttpStatusCode.Accepted);
                 }
@@ -51,7 +51,7 @@ namespace DeCamaroong.Controllers
           
         }
 
-        [HttpPost]
+        [HttpGet]
         [Authorize]
         public HttpResponseMessage Delete(int ID)
         {

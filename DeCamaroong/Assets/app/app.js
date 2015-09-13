@@ -8,7 +8,8 @@
     'news',
     'mail',
     'building',
-    'addBuilding'
+    'addBuilding',
+    'gallery'
 ]);
 
 
@@ -87,7 +88,7 @@ app.config(['$provide', '$routeProvider', '$httpProvider', function ($provide, $
   
     $routeProvider.when('/manageGallery', {
         templateUrl: 'App/ManageGallery',
-        controller: 'manageGalleryCtrl'
+        controller: 'galleryCtrl'
     });
     $routeProvider.otherwise({
         redirectTo: '/home'
