@@ -180,9 +180,11 @@
     <Compile Include="Controllers\WS_AccountController.cs" />
     <Compile Include="Controllers\WS_BlogController.cs" />
     <Compile Include="Controllers\WS_BuildingController.cs" />
+    <Compile Include="Controllers\WS_GalleryController.cs" />
     <Compile Include="Controllers\WS_MailController.cs" />
     <Compile Include="Domain\BlogItem.cs" />
     <Compile Include="Domain\BuildingImage.cs" />
+    <Compile Include="Domain\Gallery.cs" />
     <Compile Include="Domain\Mail.cs" />
     <Compile Include="Domain\PropertyBuilding.cs" />
     <Compile Include="Domain\User.cs" />
@@ -217,6 +219,18 @@
     <Compile Include="Migrations\201509050349152_050920151049-addMainImage.Designer.cs">
       <DependentUpon>201509050349152_050920151049-addMainImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201509121006467_AddGalleryTable.cs" />
+    <Compile Include="Migrations\201509121006467_AddGalleryTable.Designer.cs">
+      <DependentUpon>201509121006467_AddGalleryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509130057131_AddCaptionGallery.cs" />
+    <Compile Include="Migrations\201509130057131_AddCaptionGallery.Designer.cs">
+      <DependentUpon>201509130057131_AddCaptionGallery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509130131413_EditCationToContent.cs" />
+    <Compile Include="Migrations\201509130131413_EditCationToContent.Designer.cs">
+      <DependentUpon>201509130131413_EditCationToContent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -233,6 +247,7 @@
     <Content Include="Assets\app\app.js" />
     <Content Include="Assets\app\controllers\addBuildingCtrl.js" />
     <Content Include="Assets\app\controllers\buildingCtrl.js" />
+    <Content Include="Assets\app\controllers\galleryCtrl.js" />
     <Content Include="Assets\app\controllers\homeCtrl.js" />
     <Content Include="Assets\app\controllers\mailCtrl.js" />
     <Content Include="Assets\app\controllers\newsCtrl.js" />
@@ -279,6 +294,8 @@
     <Content Include="Assets\custom\jquery.parallax-1.1.3.js" />
     <Content Include="Assets\custom\jquery.prettyPhoto.js" />
     <Content Include="Assets\custom\jquery.sticky.js" />
+    <Content Include="Assets\ng\angular-lightbox.min.js" />
+    <Content Include="Assets\ng\angulargrid.min.js" />
     <Content Include="Assets\ng\ng-flow-standalone.min.js" />
     <Content Include="Assets\ng\ng-scroll.js" />
     <Content Include="Assets\ng\ui-bootstrap-tpls-0.13.4.min.js" />
@@ -377,6 +394,15 @@
     <EmbeddedResource Include="Migrations\201509050349152_050920151049-addMainImage.resx">
       <DependentUpon>201509050349152_050920151049-addMainImage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509121006467_AddGalleryTable.resx">
+      <DependentUpon>201509121006467_AddGalleryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509130057131_AddCaptionGallery.resx">
+      <DependentUpon>201509130057131_AddCaptionGallery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509130131413_EditCationToContent.resx">
+      <DependentUpon>201509130131413_EditCationToContent.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\fonts\fontawesome-webfont.eot" />
@@ -416,6 +442,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\App\ViewBuilding.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\App\ManageGallery.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\App\Gallery.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
