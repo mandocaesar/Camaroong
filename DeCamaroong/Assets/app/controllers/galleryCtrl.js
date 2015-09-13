@@ -1,7 +1,7 @@
-﻿angular.module('gallery', ['ui.bootstrap', 'flow'])
+﻿angular.module('gallery', ['ui.bootstrap', 'flow', 'angularGrid', 'bootstrapLightbox'])
     .controller('galleryCtrl', [
-        '$scope', '$http', '$window', '$filter', function ($scope, $http, $window, $filter) {
-
+        '$scope', '$rootScope', '$http', '$window', '$filter', 'Lightbox', function ($scope, $rootScope, $http, $window, $filter, Lightbox) {
+            
             $scope.images = [];
             $scope.galleries = [];
             $scope.obj = {};
@@ -43,6 +43,10 @@
                     function(d, s, h, c) {
                         $scope.load();
                     });
+            };
+
+            $scope.openLightboxModal = function (index) {
+                Lightbox.openModal($scope.galleries, index);
             };
 
             $scope.load();

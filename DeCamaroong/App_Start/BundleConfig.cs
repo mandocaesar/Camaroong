@@ -25,7 +25,9 @@ namespace DeCamaroong
                         "~/Assets/ng/textAngular-sanitize.min.js",
                         "~/Assets/ng/textAngular.min.js",
                         "~/Assets/ng/ng-flow-standalone.min.js",
-                        "~/Assets/ng/ng-scroll.js"
+                        "~/Assets/ng/ng-scroll.js",
+                        "~/Assets/ng/angulargrid.min.js",
+                        "~/Assets/ng/angular-lightbox.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/app").IncludeDirectory("~/Assets/app", "*.js", true));

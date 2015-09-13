@@ -15,8 +15,10 @@
 
 
 
-app.config(['$provide', '$routeProvider', '$httpProvider', function ($provide, $routeProvider, $httpProvider) {
+app.config(['$provide', '$routeProvider', '$httpProvider', 'LightboxProvider', function ($provide, $routeProvider, $httpProvider, LightboxProvider) {
     
+    LightboxProvider.fullScreenMode = true;
+    111
     //================================================
     // Ignore Template Request errors if a page that was requested was not found or unauthorized.  The GET operation could still show up in the browser debugger, but it shouldn't show a $compile:tpload error.
     //================================================
