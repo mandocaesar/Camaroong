@@ -1,15 +1,17 @@
 ﻿angular.module('gallery', ['ui.bootstrap', 'flow', 'angularGrid', 'bootstrapLightbox'])
     .controller('galleryCtrl', [
         '$scope', '$rootScope', '$http', '$window', '$filter', 'Lightbox', function ($scope, $rootScope, $http, $window, $filter, Lightbox) {
-            
+
             $scope.images = [];
             $scope.galleries = [];
+            $scope.tempGalleries = [];
             $scope.obj = {};
 
             $scope.load = function () {
                 $http.get('/api/WSGallery/GetGallery')
                     .success(function (data, status, headers, config) {
-                        console.log(data);
+                        // $scope.obj = {};
+
                         $scope.galleries = data;
                     }).error(function (s) { console.log(s) });
             }
@@ -23,24 +25,29 @@
                         gallery.Name = flowFile.name;
                         gallery.Content = uri;
                         gallery.CreatedDate = $filter('date')(new Date(), "dd/MM/yyyy");
-                        $scope.galleries.push(gallery);
+                        $scope.tempGalleries.push(gallery);
                     };
                     fileReader.readAsDataURL(flowFile.file);
                 });
+                //files = [];
+
             };
 
 
             $scope.Save = function () {
-                $http.post('/api/WSGallery/Add', $scope.galleries)
+                $http.post('/api/WSGallery/Add', $scope.tempGalleries)
                     .success(function (data, status, headers, config) {
                         $scope.load();
+                        $scope.obj.flow.files = [];
+                        console.log(Flow.files);
+                        $scope.tempGalleries = [];
                     });
             }
 
             $scope.Delete = function (ID) {
-                
-                $http.get('/api/WSGallery/Delete?ID='+ID).success(
-                    function(d, s, h, c) {
+
+                $http.get('/api/WSGallery/Delete?ID=' + ID).success(
+                    function (d, s, h, c) {
                         $scope.load();
                     });
             };
