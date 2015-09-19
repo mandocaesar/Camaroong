@@ -1,4 +1,4 @@
-﻿angular.module('addBuilding', ['ui.bootstrap', 'flow'])
+﻿angular.module('addBuilding', ['ui.bootstrap', 'flow', 'textAngular'])
     .controller('addBuildingCtrl', ['$scope', '$http', '$window', '$routeParams', '$rootScope', '$modal', function ($scope, $http, $window, $routeParams, $rootScope, $modal, $modalInstance) {
         $scope.ID = $routeParams.Id;
         $rootScope.selectedId = 0;

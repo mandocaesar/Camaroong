@@ -87,24 +87,26 @@
     <div class="row">
         <div class="col-lg-6">BedRoom</div>
         <div class="col-lg-6">
-            <input type="text" class="form-control" ng-model="building.BedRoom" />
+            <input type="text" class="form-control" ng-model="building.BedRoom"/>
         </div>
 
     </div>
     <div class="row">
-        <div class="col-lg-6">Content</div>
-        <div class="col-lg-6">
-            <textarea class="form-control" ng-model="building.Content"></textarea>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-lg-6">Price</div>
         <div class="col-lg-6">
-            <input type="number" class="form-control" ng-model="building.Price" />
+            <input type="number" class="form-control" ng-model="building.Price"/>
         </div>
     </div>
+    <div class="row"> <div class="col-lg-6">Content </div></div>
+    <div class="row" style="margin-top: 5px;">
+        <div class="col-lg-12">
+            <div text-angular ng-model="building.Content" class="col-md-12"></div>
+            @*<textarea class="form-control" ng-model="building.Content"></textarea>*@
+        </div>
+    </div>
+    
 </div>
-<div class="container" style="; margin-top: 30px;">
+<div class="container" style="margin-top: 50px;">
     <fieldset>
         <h4>Images</h4>
         <table class="table table-bordered">

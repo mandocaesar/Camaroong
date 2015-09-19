@@ -165,9 +165,11 @@
 
                     </div>
                 </div>
-                <div class="row text-primary text-center">
-                    <div class="col">Location Condition</div>
-                    <div class="col">{{building.Content}}</div>
+                <div class="row text-left">
+                    <div class="col">
+                        <h5>Content</h5>
+                    </div>
+                    <div class="col" ng-bind-html="building.Content"></div>
                 </div>
             </div>
 
