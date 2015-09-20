@@ -12,13 +12,19 @@
                 data: params
             })
             .success(function (data, status, headers, config) {
+                console.log(data);
+                console.log(status);
+
                 $http.defaults.headers.common.Authorization = "Bearer " + data.access_token;
                 $http.defaults.headers.common.RefreshToken = data.refresh_token;
                 
                 $cookieStore.put('_Token', data.access_token);
-                window.location = '#/blogmanager';
+                $location.path("/blogmanager");
             })
             .error(function (data, status, headers, config) {
+                console.log(data);
+                console.log(status);
+
                 $scope.message = data.error_description.replace(/["']{1}/gi, "");
                 $scope.showMessage = true;
             });

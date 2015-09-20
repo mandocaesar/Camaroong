@@ -85,7 +85,6 @@
             }
         }
 
-
         $scope.ok = function () {
             $rootScope.modal.close();
         }

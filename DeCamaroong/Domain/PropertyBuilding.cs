@@ -22,5 +22,10 @@ namespace DeCamaroong.Domain
 
 
         public List<BuildingImage> Images { get; set; }
+
+        public PropertyBuilding()
+        {
+            Price = 0;
+        }
     }
 }

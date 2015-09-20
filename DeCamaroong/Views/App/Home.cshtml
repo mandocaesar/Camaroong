@@ -37,7 +37,7 @@
                                         <li><a href="#about-us" class="scroll">About Us</a></li>
                                         <li><a href="#properties" class="scroll">Properties</a></li>
                                         <li><a href="#team" class="scroll">Team</a></li>
-                                        <li><a href="#/Gallery">Gallery</a></li>
+                                        <li><a href="#gallery">Gallery</a></li>
                                         <li><a href="#contact-us" class="scroll">Contact us</a></li>
                                         <!-- Header Contact -->
                                         <li class="hidden-767">
@@ -254,109 +254,20 @@
             </div>
         </section>
         <!-- call to action -->
-        <section id="who-we-are" class="page-section light-bg border-tb">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4" data-animation="fadeInLeft">
-                        <div class="section-title text-left">
-                            <h2 class="title">About Us</h2>
-                        </div>
-                        <div class="panel-group no-list" id="accordion1">
-                            <div class="panel panel-default active">
-                                <div class="panel-heading">
-                                    <div class="panel-title">
-                                        <!-- Tab -->
-                                        <a data-toggle="collapse" data-parent="#accordion1" href="#item1">Who We are?</a>
-                                    </div>
-                                </div>
-                                <div id="item1" class="panel-collapse collapse in">
-                                    <div class="panel-body">
-                                        <!-- Tab Content-->Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa esse
-                                        obcaecati repudiandae veniam amet modi recusandae optio earum sequi accusantium culpa vitae
-                                        iste sit commodi eaque iste sit commodi voluptatem officia quam.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default active">
-                                <div class="panel-heading">
-                                    <div class="panel-title">
-                                        <!-- Tab -->
-                                        <a data-toggle="collapse" data-parent="#accordion1" href="#item2">What we do?</a>
-                                    </div>
-                                </div>
-                                <div id="item2" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <!-- Tab Content-->Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque natus
-                                        quaerat voluptate? Asperiores hic dolore voluptate corporis obcaecati reiciendis sunt ipsam
-                                        iste. Eligendi inventore voluptatibus quia saepe odit deserunt nam?
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <div class="panel-title">
-                                        <!-- Tab -->
-                                        <a data-toggle="collapse" data-parent="#accordion1" href="#item3">How we do?</a>
-                                    </div>
-                                </div>
-                                <div id="item3" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <!-- Image -->
-                                        <img src="Assets/img/sections/additional-img2.jpg" class="pull-right" width="120" height="82"
-                                             alt="" />
-                                        <!-- Tab Content--> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa esse
-                                        obcaecati repudiandae veniam amet modi recusandae optio earum sequi accusantium culpa vitae
-                                        iste sit commodi eaque voluptatem officia quam.
-                                    </div>
-                                </div>
+        <section id="gallery" class="page-section slider">
+            <div id="main-slider" class="carousel">
+                <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox" ng-repeat="obj in galleries track by $id(obj)">
+                        <div ng-class="$index == 1 ? 'item active' : 'item'" >
+                            <img src="{{obj.Content}}" alt=" " title=" " width=" 1499" height="400"/>
+                            <div class="carousel-caption">
+                                <h2 class="upper animation animated-item-1 black text-left">
+                                    <span class="white text-shadow">Best Home in Town</span>
+                                    <br /><span class="text-color text-shadow"><a href="#/Gallery" class="btn btn-primary">View All Gallery</a> </span>
+                                </h2>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4" data-animation="fadeInUp">
-                        <div class="section-title text-left">
-                            <h2 class="title">Process</h2>
-                        </div>
-                        <div class="about-us head-no-margin">
-                            <!-- Progress Bar 1 -->
-                            <h6>Graphic Design</h6>
-                            <div class="progress bottom-margin-20">
-                                <div data-percentage="60" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60"
-                                     role="progressbar" class="progress-bar">
-                                    <span class="progress-label" style="left: 60%">60%</span>
-                                </div>
-                            </div>
-                            <!-- Progress Bar 2 -->
-                            <h6>HTML 5</h6>
-                            <div class="progress bottom-margin-20">
-                                <div data-percentage="65" aria-valuemax="100" aria-valuemin="0" aria-valuenow="65"
-                                     role="progressbar" class="progress-bar">
-                                    <span class="progress-label" style="left: 65%">65%</span>
-                                </div>
-                            </div>
-                            <!-- Progress Bar 3 -->
-                            <h6>CSS 3</h6>
-                            <div class="progress bottom-margin-20">
-                                <div data-percentage="80" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80"
-                                     role="progressbar" class="progress-bar">
-                                    <span class="progress-label" style="left: 80%">80%</span>
-                                </div>
-                            </div>
-                            <!-- Progress Bar 4 -->
-                            <h6>Wordpress</h6>
-                            <div class="progress bottom-margin-20">
-                                <div data-percentage="70" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70"
-                                     role="progressbar" class="progress-bar">
-                                    <span class="progress-label" style="left: 70%">70%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 opacity" data-animation="fadeInRight">
-                        <div class="section-title text-left">
-                            <h2 class="title">Our Office</h2>
-                        </div>
-                        <img src="Assets/img/sections/property-2.jpg" width="400" height="370" alt="" title="" />
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     </div>
                 </div>
             </div>
@@ -427,7 +338,7 @@
                                 <!-- Title -->
                                 <h3 class="title">{{x.Title}}</h3>
                                 <!-- price-->
-                                <a scroll-to="detail" class="btn btn-default scroll" ng-click="getDetail(x.ID)">Rp {{x.Price}}</a>
+                                <a scroll-to="detail" class="btn btn-default scroll" ng-click="getDetail(x.ID)">Detail</a>
                             </div>
                         </div>
                         <div class="">
