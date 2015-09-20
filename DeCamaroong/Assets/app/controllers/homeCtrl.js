@@ -10,9 +10,10 @@
                     .success(function (data, status, headers, config) {
                         // $scope.obj = {};
 
-                    $scope.galleries =data;
-                     
-                    }).error(function (s) { console.log(s) });
+                        $scope.galleries = data;
+                    console.log($scope.galleries[5]);
+
+                }).error(function (s) { console.log(s) });
             }
 
             $scope.getList = function () {

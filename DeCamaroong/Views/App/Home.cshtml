@@ -37,7 +37,7 @@
                                         <li><a href="#about-us" class="scroll">About Us</a></li>
                                         <li><a href="#properties" class="scroll">Properties</a></li>
                                         <li><a href="#team" class="scroll">Team</a></li>
-                                        <li><a href="#gallery">Gallery</a></li>
+                                        <li><a href="#gallery" class="scroll">Gallery</a></li>
                                         <li><a href="#contact-us" class="scroll">Contact us</a></li>
                                         <!-- Header Contact -->
                                         <li class="hidden-767">
@@ -269,12 +269,12 @@
                         <div class="col-lg-4">
                             <a href="#/Gallery"><img src="{{slide.Content}}" class="image-gallery"></a>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" ng-hide="galleries[$index + 1] == undefined">
                             <a href="#/Gallery">
                                 <img src="{{galleries[$index + 1].Content}}" class="image-gallery">
                             </a>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" ng-hide="galleries[$index + 2] == undefined">
                             <a href="#/Gallery">
                                 <img src="{{galleries[$index + 2].Content}}" class="image-gallery">
                             </a>

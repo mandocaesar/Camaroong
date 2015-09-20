@@ -6255,3 +6255,8 @@ ul.tags li{
     width: 400px;
     height: 250px;
 }
+
+.hide-gallery {
+    display: none;
+}
+
