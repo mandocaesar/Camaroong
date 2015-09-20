@@ -261,6 +261,8 @@
     <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Assets\bootstrap\js\bootstrap.js" />
     <Content Include="Assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\bootstrap\js\ui-bootstrap-custom-0.13.4.min.js" />
+    <Content Include="Assets\custom\slick.js" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\fonts\icomoon.svg" />
     <Content Include="Assets\img\sections\bg\bg-1.jpg" />
@@ -295,9 +297,11 @@
     <Content Include="Assets\custom\jquery.prettyPhoto.js" />
     <Content Include="Assets\custom\jquery.sticky.js" />
     <Content Include="Assets\ng\angular-lightbox.min.js" />
+    <Content Include="Assets\ng\angular-slick.min.js" />
     <Content Include="Assets\ng\angulargrid.min.js" />
     <Content Include="Assets\ng\ng-flow-standalone.min.js" />
     <Content Include="Assets\ng\ng-scroll.js" />
+    <Content Include="Assets\ng\ui-bootstrap-custom-tpls-0.13.4.min.js" />
     <Content Include="Assets\ng\ui-bootstrap-tpls-0.13.4.min.js" />
     <Content Include="Assets\rs-plugin\jquery.themepunch.revolution.min.js" />
     <Content Include="Assets\rs-plugin\jquery.themepunch.tools.min.js" />
@@ -331,9 +335,12 @@
     <Content Include="Assets\styles\responsive.css" />
     <Content Include="Assets\styles\revolution-slider.css" />
     <Content Include="Assets\styles\settings.css" />
+    <Content Include="Assets\styles\slick-theme.css" />
+    <Content Include="Assets\styles\slick.css" />
     <Content Include="Assets\styles\style.css" />
     <Content Include="Assets\styles\styles.css" />
     <Content Include="Assets\styles\textAngular.css" />
+    <Content Include="Assets\styles\ui-bootstrap-custom-0.13.4-csp.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">

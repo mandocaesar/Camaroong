@@ -2,14 +2,16 @@
     .controller('homeCtrl', ['$scope', '$http', '$window', '$rootScope', '$modal', '$anchorScroll', '$location',
         function ($scope, $http, $window, $rootScope, $modal, $anchorScroll, $location) {
             $scope.mail = {};
+            $scope.group = [];
+            $scope.galleries = [];
 
             $scope.loadGalleries = function () {
                 $http.get('/api/WSGallery/GetGallery')
                     .success(function (data, status, headers, config) {
                         // $scope.obj = {};
 
-                        $scope.galleries = data;
-                        console.log(data);
+                    $scope.galleries =data;
+                     
                     }).error(function (s) { console.log(s) });
             }
 

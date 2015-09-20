@@ -15,10 +15,11 @@ namespace DeCamaroong
             //Moved bootstrap css to own style tag in the _layout page.  This is to remove it from the optimizations which was breaking the fonts and icons.
             bundles.Add(new StyleBundle("~/styles").IncludeDirectory("~/Assets", "*.css", true));
 
+            bundles.Add(new StyleBundle("~/slick").Include("~/Assets/custom/slick.js", "~/Assets/ng/angular-slick.min.js"));
 
             bundles.Add(new ScriptBundle("~/ng").Include(
                         "~/Assets/ng/angular.min.js",
-                        "~/Assets/ng/ui-bootstrap-tpls-0.13.4.min.js",
+                        "~/Assets/ng/ui-bootstrap-custom-tpls-0.13.4.min.js",
                         "~/Assets/ng/angular-route.min.js",
                         "~/Assets/ng/angular-cookies.min.js",
                         "~/Assets/ng/textAngular-rangy.min.js",
@@ -54,7 +55,8 @@ namespace DeCamaroong
                 "~/Assets/custom/jquery.parallax-1.1.3.js",
                 "~/Assets/custom/jquery.countTo.js",
                 "~/Assets/custom/jquery.mb.YTPlayer.js",
-                "~/Assets/custom/custom.js"));
+                "~/Assets/custom/custom.js"
+                ));
 
             BundleTable.EnableOptimizations = false;
         }

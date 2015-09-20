@@ -254,24 +254,51 @@
             </div>
         </section>
         <!-- call to action -->
-        <section id="gallery" class="page-section slider">
-            <div id="main-slider" class="carousel">
-                <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox" ng-repeat="obj in galleries track by $id(obj)">
-                        <div ng-class="$index == 1 ? 'item active' : 'item'" >
-                            <img src="{{obj.Content}}" alt=" " title=" " width=" 1499" height="400"/>
-                            <div class="carousel-caption">
-                                <h2 class="upper animation animated-item-1 black text-left">
-                                    <span class="white text-shadow">Best Home in Town</span>
-                                    <br /><span class="text-color text-shadow"><a href="#/Gallery" class="btn btn-primary">View All Gallery</a> </span>
-                                </h2>
-                            </div>
-                        </div>
+    <section id="gallery" class="page-section slider">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-left" data-animation="fadeInUp">
+                        <h2 class="title">Our Gallery!</h2>
                     </div>
                 </div>
             </div>
-        </section>
+            <carousel interval="3000">
+                <slide ng-repeat="slide in galleries" active="slide.active">
+                    <div class="row" style="margin: auto;">
+                        <div class="col-lg-4">
+                            <a href="#/Gallery"><img src="{{slide.Content}}" class="image-gallery"></a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="#/Gallery">
+                                <img src="{{galleries[$index + 1].Content}}" class="image-gallery">
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="#/Gallery">
+                                <img src="{{galleries[$index + 2].Content}}" class="image-gallery">
+                            </a>
+                        </div>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+        @*<div id="main-slider" class="carousel">
+                    <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox" ng-repeat="obj in galleries track by $id(obj)">
+                            <div ng-class="$index == 1 ? 'item active' : 'item'">
+                                <img src="{{obj.Content}}" alt=" " title=" " width=" 1499" height="400"/>
+                                <div class="carousel-caption">
+                                    <h2 class="upper animation animated-item-1 black text-left">
+                                        <span class="white text-shadow">Best Home in Town</span>
+                                        <br/><span class="text-color text-shadow"><a href="#/Gallery" class="btn btn-primary">View All Gallery</a> </span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+    </section>
         <!-- who-we-are -->
         <section id="fun-factor" class="page-section">
             <div class="image-bg content-in fixed" data-background="Assets/img/sections/bg/bg-11.jpg"></div>
