@@ -11,9 +11,9 @@
                         // $scope.obj = {};
 
                         $scope.galleries = data;
-                    console.log($scope.galleries[5]);
+                        console.log($scope.galleries[5]);
 
-                }).error(function (s) { console.log(s) });
+                    }).error(function (s) { console.log(s) });
             }
 
             $scope.getList = function () {
@@ -22,6 +22,26 @@
                         $scope.blogList = data;
                     });
             };
+
+            $scope.getContent = function (index) {
+                //console.log("index:" + index);
+
+                if ((index) > ($scope.galleries.length)) {
+                    var idx = (index) - ($scope.galleries.length);
+                    //console.log($scope.galleries[idx - 1]);
+                    return $scope.galleries[idx-1].Content;
+                } else {
+
+                    return $scope.galleries[index-1].Content;
+                }
+                //if (index > $scope.galleries.length - 1) {
+                //    console.log(index);
+                //    return $scope.galleries[index - $scope.galleries.length].Content;
+
+                //} else {
+                //    return $scope.galleries[index].Content;
+                //}
+            }
 
             $scope.postMail = function () {
                 console.log($scope.mail);

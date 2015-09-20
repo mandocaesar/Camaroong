@@ -263,20 +263,20 @@
                     </div>
                 </div>
             </div>
-            <carousel interval="3000">
+            <carousel >
                 <slide ng-repeat="slide in galleries" active="slide.active">
                     <div class="row" style="margin: auto;">
                         <div class="col-lg-4">
                             <a href="#/Gallery"><img src="{{slide.Content}}" class="image-gallery"></a>
                         </div>
-                        <div class="col-lg-4" ng-hide="galleries[$index + 1] == undefined">
+                        <div class="col-lg-4">
                             <a href="#/Gallery">
-                                <img src="{{galleries[$index + 1].Content}}" class="image-gallery">
+                                <img src="{{getContent($index + 2)}}" class="image-gallery">
                             </a>
                         </div>
-                        <div class="col-lg-4" ng-hide="galleries[$index + 2] == undefined">
+                        <div class="col-lg-4">
                             <a href="#/Gallery">
-                                <img src="{{galleries[$index + 2].Content}}" class="image-gallery">
+                                <img src="{{getContent($index + 3)}}" class="image-gallery">
                             </a>
                         </div>
                     </div>
