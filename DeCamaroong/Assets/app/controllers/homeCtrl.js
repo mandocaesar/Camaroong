@@ -8,12 +8,10 @@
             $scope.loadGalleries = function () {
                 $http.get('/api/WSGallery/GetGallery')
                     .success(function (data, status, headers, config) {
-                        // $scope.obj = {};
-
                         $scope.galleries = data;
-                        console.log($scope.galleries[5]);
+                        $('#pageloader').hide();
+                    }).error(function (s) {  });
 
-                    }).error(function (s) { console.log(s) });
             }
 
             $scope.getList = function () {
@@ -24,23 +22,14 @@
             };
 
             $scope.getContent = function (index) {
-                //console.log("index:" + index);
 
                 if ((index) > ($scope.galleries.length)) {
                     var idx = (index) - ($scope.galleries.length);
-                    //console.log($scope.galleries[idx - 1]);
                     return $scope.galleries[idx-1].Content;
                 } else {
 
                     return $scope.galleries[index-1].Content;
                 }
-                //if (index > $scope.galleries.length - 1) {
-                //    console.log(index);
-                //    return $scope.galleries[index - $scope.galleries.length].Content;
-
-                //} else {
-                //    return $scope.galleries[index].Content;
-                //}
             }
 
             $scope.postMail = function () {
