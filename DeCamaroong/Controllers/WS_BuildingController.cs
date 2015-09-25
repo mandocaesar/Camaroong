@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Web.Http;
 using DeCamaroong.Domain;
 using DeCamaroong.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace DeCamaroong.Controllers
 {
@@ -69,12 +70,14 @@ namespace DeCamaroong.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpGet]
         [Authorize]
         public HttpResponseMessage DeleteBuilding(int id)
         {
             try
             {
+                
+                db.Buildings.Include(p => p.Images).First(e => e.ID == id).Images.RemoveAll(e=>e.ID != 0);
                 db.Buildings.Remove(db.Buildings.First(e => e.ID == id));
                 db.SaveChanges();
                 return Request.CreateResponse(HttpStatusCode.OK);
@@ -135,9 +138,11 @@ namespace DeCamaroong.Controllers
         {
             try
             {
-                var item = db.Buildings.First(e => e.ID == building.ID);
-                if (item != null)
+                var count = db.Buildings.Where(e => e.ID == building.ID).Count();
+                var item = building;
+                if (count != 0)
                 {
+                    item = db.Buildings.First(e => e.ID == building.ID);
                     item.BathRoom = building.BathRoom;
                     item.BedRoom = building.BedRoom;
                     item.BuildingSquare = building.BuildingSquare;
@@ -145,11 +150,12 @@ namespace DeCamaroong.Controllers
                     item.LandSquare = building.LandSquare;
                     item.Price = building.Price;
                     item.Title = building.Title;
-                    item.Images = building.Images;
+                    item.Images = building.Images; 
+                }
                     db.Buildings.AddOrUpdate(item);
                     db.SaveChanges();
                     return Request.CreateResponse(HttpStatusCode.OK);
-                }
+               
                 return Request.CreateResponse(HttpStatusCode.NotFound);
             }
             catch (Exception)

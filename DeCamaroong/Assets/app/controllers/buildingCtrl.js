@@ -8,13 +8,14 @@
         $scope.obj = {};
         $scope.images = [];
 
-        $scope.delete = function () {
-            var postUrl = '../api/WSBuilding/DeleteBulding';
-            $http.post(postUrl, item)
+        $scope.delete = function (Id) {
+            var postUrl = '../api/WSBuilding/DeleteBuilding/' + $scope.buildings[Id].ID;
+            $http.get(postUrl)
                 .success(function (data, status, headers, config) {
-                    //Modal
+                    $scope.getBuildings();
+                    console.log(data);
                 }).error(function (data, status, headers, config) {
-                    //Modal
+                    console.log(data);
                 });
         }
 
@@ -35,14 +36,14 @@
         }
 
 
-       
+
 
         if (!$rootScope.loggedIn) {
-           
+
             if ($scope.ID != null) {
                 $scope.getBuilding($scope.ID);
             } else {
-                //window.location = '#/signin';
+                window.location = '#/signin';
             }
         } else {
             $scope.getBuildings();
@@ -60,5 +61,5 @@
             $rootScope.modal.close();
         }
 
-        
+
     }]);

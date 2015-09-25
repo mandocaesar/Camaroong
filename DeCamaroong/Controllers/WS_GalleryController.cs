@@ -44,7 +44,8 @@ namespace DeCamaroong.Controllers
                     List<string> content = item.Content.Split(',').ToList();
                     var bytes = Convert.FromBase64String(content[1]);
                     string mappath = HttpContext.Current.Server.MapPath("~/Assets/img/gallery/");
-                    string filepath = String.Format(mappath + "{0}", item.Name);
+                    var filepath = Path.Combine(mappath, item.Name);
+                    //string filepath = String.Format(mappath + "{0}", item.Name);
                     using (var imageFile = new FileStream(filepath, FileMode.Create))
                     {
                         imageFile.Write(bytes, 0, bytes.Length);
@@ -63,7 +64,7 @@ namespace DeCamaroong.Controllers
             }
             catch (Exception ex)
             {
-              return  Request.CreateResponse(HttpStatusCode.BadRequest);
+              return  Request.CreateResponse(HttpStatusCode.BadRequest,ex.Message);
             }
           
         }

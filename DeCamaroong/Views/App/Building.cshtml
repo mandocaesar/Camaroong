@@ -58,7 +58,7 @@
             <th class="text-center">Bedroom</th>
             <th class="text-center">Post on</th>
             <th class="text-center">Price</th>
-            <th class="text-center">Action</th>
+            <th  colspan="2" class="text-center">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -71,6 +71,8 @@
                 <td>{{ x.PostDate| date:"MM/dd/yyyy 'at' h:mma" }}</td>
                 <td>{{ x.Price | currency:"Rp"}}</td>
                 <td><span class="btn btn-success" ng-click="view($index)"><i class="glyphicon glyphicon-open-file"></i> View </span></td>
+                <td><span class="btn btn-danger" ng-click="delete($index)"><i class="glyphicon glyphicon-trash"></i> Delete </span></td>
+
             </tr>
         </tbody>
     </table>

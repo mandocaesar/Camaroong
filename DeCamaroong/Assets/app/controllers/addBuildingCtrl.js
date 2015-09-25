@@ -1,5 +1,6 @@
 ﻿angular.module('addBuilding', ['ui.bootstrap', 'flow', 'textAngular'])
     .controller('addBuildingCtrl', ['$scope', '$http', '$window', '$routeParams', '$rootScope', '$modal', function ($scope, $http, $window, $routeParams, $rootScope, $modal, $modalInstance) {
+        $rootScope.ID = 0;
         $scope.ID = $routeParams.Id;
         $rootScope.selectedId = 0;
         $scope.building = {};
@@ -19,17 +20,18 @@
             var postUrl = '../api/WSBuilding/DeleteBuilding';
             $http.post(postUrl, item)
                 .success(function (data, status, headers, config) {
-                    //Modal
+                    console.log(data);
+                    $scope.getBuilding();
                 }).error(function (data, status, headers, config) {
-                    //Modal
+                    console.log(data);
                 });
         }
 
-        $scope.deleteImage = function(id, imageIdx) {
+        $scope.deleteImage = function (id, imageIdx) {
             ////imageIdx = imageIdx + 1;
             var value = id + '-' + imageIdx;
             var postUrl = '../api/WSBuilding/DeleteImage?idx=' + value;
-            
+
             console.log(value);
             var item = { idx: value };
             $http.get(postUrl)
@@ -52,8 +54,9 @@
         };
 
         $scope.postItem = function () {
+            console.log($scope.ID);
             var postUrl = '/api/WSBuilding/PostBuilding';
-            if ($scope.ID !== 0) {
+            if ($scope.ID !== undefined) {
                 postUrl = '/api/WSBuilding/UpdateBuilding';
             }
             angular.forEach($scope.images, function (x, i) {
@@ -68,7 +71,7 @@
             $http.post(postUrl, $scope.building)
                 .success(function (data, status, headers, config) {
                     $scope.building = {};
-                    $rootScope.selectedId = 0;
+                    $rootScope.ID = 0;
                     window.location = '#/building';
 
                 }).error(function (data, status, headers, config) {

@@ -41,7 +41,7 @@
                         $scope.obj.flow.files = [];
                         console.log(Flow.files);
                         $scope.tempGalleries = [];
-                    });
+                    }).error(function (s) { console.log(s) });;
             }
 
             $scope.Delete = function (ID) {
