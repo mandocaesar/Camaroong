@@ -77,8 +77,7 @@ namespace DeCamaroong.Controllers
             try
             {
                 
-                db.Buildings.Include(p => p.Images).First(e => e.ID == id).Images.RemoveAll(e=>e.ID != 0);
-                db.Buildings.Remove(db.Buildings.First(e => e.ID == id));
+                db.Buildings.Remove(db.Buildings.Include(p => p.Images).First(e => e.ID == id));
                 db.SaveChanges();
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
