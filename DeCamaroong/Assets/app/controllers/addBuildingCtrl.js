@@ -53,7 +53,7 @@
 
         $scope.postItem = function () {
             var postUrl = '/api/WSBuilding/PostBuilding';
-            if ($scope.selectedId !== 0) {
+            if ($scope.ID !== 0) {
                 postUrl = '/api/WSBuilding/UpdateBuilding';
             }
             angular.forEach($scope.images, function (x, i) {

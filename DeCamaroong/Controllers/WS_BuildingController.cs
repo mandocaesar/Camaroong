@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -137,7 +138,15 @@ namespace DeCamaroong.Controllers
                 var item = db.Buildings.First(e => e.ID == building.ID);
                 if (item != null)
                 {
-                    item = building;
+                    item.BathRoom = building.BathRoom;
+                    item.BedRoom = building.BedRoom;
+                    item.BuildingSquare = building.BuildingSquare;
+                    item.Content = building.Content;
+                    item.LandSquare = building.LandSquare;
+                    item.Price = building.Price;
+                    item.Title = building.Title;
+                    item.Images = building.Images;
+                    db.Buildings.AddOrUpdate(item);
                     db.SaveChanges();
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }

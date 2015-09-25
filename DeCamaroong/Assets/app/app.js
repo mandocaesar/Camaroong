@@ -130,7 +130,7 @@ app.run(['$rootScope', '$http', '$cookies', '$cookieStore', function ($rootScope
     }
 
     $rootScope.$on('$locationChangeSuccess', function (event) {
-        if ($http.defaults.headers.common.RefreshToken != null) {
+        if ($http.defaults.headers.common.RefreshToken != null && $rootScope.from !== 'signin') {
             var params = "grant_type=refresh_token&refresh_token=" + $http.defaults.headers.common.RefreshToken;
             $http({
                 url: '/Token',
