@@ -63,6 +63,11 @@ namespace DeCamaroong.Controllers
         [HttpPost]
         public HttpResponseMessage PostMail(Mail mail)
         {
+            if (mail.Email.Trim() == "" &&
+                mail.Fullname.Trim() == "" &&
+                mail.Message.Trim() == "")
+                return Request.CreateResponse(HttpStatusCode.BadRequest);   
+
             try
             {
                 mail.createdDate = DateTime.Now;
