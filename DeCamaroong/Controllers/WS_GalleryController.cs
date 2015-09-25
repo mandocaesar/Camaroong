@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using DeCamaroong.Domain;
 using DeCamaroong.Models;
+using WebGrease;
 
 namespace DeCamaroong.Controllers
 {
@@ -36,6 +39,20 @@ namespace DeCamaroong.Controllers
         {
             try
             {
+                foreach (var item in items)
+                {
+                    List<string> content = item.Content.Split(',').ToList();
+                    var bytes = Convert.FromBase64String(content[1]);
+                    string mappath = HttpContext.Current.Server.MapPath("~/Assets/img/gallery/");
+                    string filepath = String.Format(mappath + "{0}", item.Name);
+                    using (var imageFile = new FileStream(filepath, FileMode.Create))
+                    {
+                        imageFile.Write(bytes, 0, bytes.Length);
+                        imageFile.Flush();
+                    }
+
+                    item.Content = String.Format("Assets/img/gallery/{0}", item.Name);
+                }
                 using (var db = new DBContext())
                 {
                     db.Galleries.AddRange(items);
@@ -44,7 +61,7 @@ namespace DeCamaroong.Controllers
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
               return  Request.CreateResponse(HttpStatusCode.BadRequest);
             }
