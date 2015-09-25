@@ -5118,7 +5118,7 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: white;
+  background-color: transparent;
   background-clip: padding-box;
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, .2);
@@ -5428,7 +5428,6 @@ button.close {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   line-height: 1;
-  margin:auto;
 }
 .carousel-inner > .active,
 .carousel-inner > .next,

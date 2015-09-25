@@ -20,8 +20,6 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -268,7 +266,6 @@
     <Content Include="Assets\custom\slick.js" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\fonts\icomoon.svg" />
-    <Content Include="Assets\img\sections\logo.jpg" />
     <Content Include="Assets\img\sections\bg\bg-1.jpg" />
     <Content Include="Assets\img\sections\bg\bg-11.jpg" />
     <Content Include="Assets\img\sections\map-marker.png" />
@@ -281,9 +278,6 @@
     <Content Include="Assets\img\sections\property-2.jpg" />
     <Content Include="Assets\img\sections\property-3.jpg" />
     <Content Include="Assets\img\sections\property-4.jpg" />
-    <Content Include="Assets\img\sections\slider\slide1.jpg" />
-    <Content Include="Assets\img\sections\slider\slide2.jpg" />
-    <Content Include="Assets\img\sections\slider\slide3.jpg" />
     <Content Include="Assets\img\sections\slider\slider29-bg.jpg" />
     <Content Include="Assets\img\sections\slider\slider30-bg.jpg" />
     <Content Include="Assets\img\sections\slider\slider31-bg.jpg" />
@@ -497,13 +491,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
